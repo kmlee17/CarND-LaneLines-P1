@@ -5,18 +5,18 @@
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 6 steps.
-1. Convert to grayscale
+1. Convert to grayscale  
 ![Step 1](images/step1.png)
-2. Canny Edge detection
+2. Canny Edge detection  
 ![Step 1](images/step2.png)
-3. Dilation to smooth edges
+3. Dilation to smooth edges  
 ![Step 1](images/step3.png)
-4. Mask region of interest
+4. Mask region of interest  
 ![Step 1](images/step4.png)
 5. Hough transform
-6. Linear regression on Hough lines
+6. Linear regression on Hough lines  
 ![Step 1](images/step6.png)
-7. Weigh combined image with lane lines overlay
+7. Weigh combined image with lane lines overlay  
 ![Step 1](images/step7.png)
 
 
