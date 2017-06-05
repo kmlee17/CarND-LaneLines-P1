@@ -4,7 +4,7 @@
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 6 steps.
+My pipeline consisted of 7 steps.
 1. Convert to grayscale  
 ![Step 1](images/step1.png)
 2. Canny Edge detection  
@@ -24,19 +24,16 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 
 ### 2. Identify potential shortcomings with your current pipeline
+- One potential shortcoming would be what would happen when the laneline becomes less defined because of lighting (going through shade, etc), markings, or other external factors.  There is an instance in the yellow lane line video where the line projects incorrectly for a short period of time.
 
+- Another shortcoming could be if the lane lines moved out of the region of interest as they would then get masked out and detection would fail.
 
-One potential shortcoming would be what would happen when the laneline becomes less defined because of lighting (going through shade, etc), markings, or other external factors.  There is an instance in the yellow lane line video where the line projects incorrectly for a short period of time.
-
-Another shortcoming could be if the lane lines moved out of the region of interest as they would then get masked out and detection would fail.
-
-The pipeline doesn't do well at all in the challenge video and even fails to register any lane lines once the road color changes to a lighter gray.
+- The pipeline doesn't do well at all in the challenge video and even fails to register any lane lines once the road color changes to a lighter gray.
 
 
 ### 3. Suggest possible improvements to your pipeline
+- A possible improvement would be to make the pipeline more robust by less hardcoding of things like the region of interest vertices, slope thresholds, parameters for Canny/Hough/etc.
 
-A possible improvement would be to make the pipeline more robust by less hardcoding of things like the region of interest vertices, slope thresholds, parameters for Canny/Hough/etc.
+- Another potential improvement could be to use knowledge of lane line positioning from previous frames in cases where the lane line detection fails for a few frames.
 
-Another potential improvement could be to use knowledge of lane line positioning from previous frames in cases where the lane line detection fails for a few frames.
-
-Additional modification of parameters might be needed to pick up lanes where the contrast between the line and the road is less.  Another option here would be to take the original image and find the yellow lines and turn these white so that they would appear stronger in the grayscale transformation.
+- Additional modification of parameters might be needed to pick up lanes where the contrast between the line and the road is less.  Another option here would be to take the original image and find the yellow lines and turn these white so that they would appear stronger in the grayscale transformation.
